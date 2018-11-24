@@ -8,7 +8,7 @@ import org.springframework.data.domain.Example;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 import edu.csumb.cst438.userdb.entities.User;
 
 @RestController
@@ -17,7 +17,7 @@ public class UserController {
     IUserRepository userRepo;
 
     
-    	
+    @CrossOrigin(origins = "https://users-db1.herokuapp.com")
     @GetMapping("/username/{UserName}")
     public User getInfoByUsername (@PathVariable String UserName) {
      
