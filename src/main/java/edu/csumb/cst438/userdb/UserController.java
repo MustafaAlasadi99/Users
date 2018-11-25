@@ -17,7 +17,7 @@ public class UserController {
     IUserRepository userRepo;
 
     
-    @CrossOrigin(origins = "http://localhost:4200"  )
+    @CrossOrigin(origins = "https://team-7-project.herokuapp.com"  )
     @GetMapping("/username/{UserName}")
     public User getInfoByUsername (@PathVariable String UserName) {
      
