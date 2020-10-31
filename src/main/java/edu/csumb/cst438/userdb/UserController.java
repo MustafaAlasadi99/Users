@@ -51,8 +51,10 @@ public class UserController {
 
         if(newUser!=userRepo.findByUserName(newUser.username.name))
      
-
       return userRepo.save(newUser);
+
+
+      else return newUser;
     }
 
 
