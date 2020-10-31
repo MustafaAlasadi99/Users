@@ -27,6 +27,14 @@ public class UserController {
     }
 
 
+    @RequestMapping(value = "/persistPerson", method = RequestMethod.POST)
+    public ResponseEntity<String> persistPerson(@RequestBody User user) {
+      if (User.isValid(user)) {
+        userRepo.persist(user);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+      }
+      return ResponseEntity.status(HttpStatus.I_AM_A_TEAPOT).build();
+    }
 
 
     @GetMapping ("/allUsers")
