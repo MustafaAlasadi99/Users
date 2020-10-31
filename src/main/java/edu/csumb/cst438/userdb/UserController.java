@@ -49,8 +49,8 @@ public class UserController {
     @PostMapping("/New-user")
     User newUser(@RequestBody User newUser) {
 
-        if(newUser.username.name)
-
+        if(newUser!=userRepo.findByUserName(newUser.username.name))
+     
 
       return userRepo.save(newUser);
     }
