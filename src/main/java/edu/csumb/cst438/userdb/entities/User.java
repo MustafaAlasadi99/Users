@@ -10,8 +10,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class User {
     @Id
     private String id;
-    private UserName username; //make sure object is not capitalized
-    private UserCredit usercredit;
+    public UserName username; //make sure object is not capitalized
+    public UserCredit usercredit;
 
     private String test;
 
