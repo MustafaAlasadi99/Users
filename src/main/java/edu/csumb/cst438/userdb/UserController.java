@@ -14,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import edu.csumb.cst438.userdb.entities.User;
 
@@ -35,11 +36,10 @@ public class UserController {
 
     @RequestMapping(value = "/persistPerson", method = RequestMethod.POST)
     public ResponseEntity<String> persistPerson(@RequestBody User user) {
-      if (User.isValid(user)) {
+      
         userRepo.persist(user);
         return ResponseEntity.status(HttpStatus.CREATED).build();
-      }
-      return ResponseEntity.status(HttpStatus.I_AM_A_TEAPOT).build();
+     
     }
 
 
