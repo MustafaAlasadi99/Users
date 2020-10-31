@@ -54,7 +54,7 @@ public class UserController {
       return userRepo.save(newUser);
 
 
-      else return newUser;
+      else return;
     }
 
 
