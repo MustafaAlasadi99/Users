@@ -1,9 +1,9 @@
 package edu.csumb.cst438.userdb.entities;
 
 public class UserCredit {
-    private double amount;
+    private int amount;
 
-    public UserCredit (double amount) {
+    public UserCredit (int amount) {
         this.amount = amount;
     }
 
@@ -12,7 +12,7 @@ public class UserCredit {
     }*/
 
 
-    public Double getAmount () {
+    public int getAmount () {
         return this.amount;
     }
 }
