@@ -33,7 +33,7 @@ public class UserController {
         return result;
     }
 
-
+    /*
     @RequestMapping(value = "/persistPerson", method = RequestMethod.POST)
     public ResponseEntity<String> persistPerson(@RequestBody User user) {
       
@@ -41,6 +41,17 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.CREATED).build();
      
     }
+
+    */
+
+
+    @PostMapping("/New-user")
+    User newUser(@RequestBody User newUser) {
+      return userRepo.save(newUser);
+    }
+
+
+
 
 
     @GetMapping ("/allUsers")
