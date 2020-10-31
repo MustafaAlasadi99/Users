@@ -48,6 +48,13 @@ public class UserController {
 
     @PostMapping("/New-user")
     User newUser(@RequestBody User newUser) {
+
+        if(userRepo.findByUserName(newUser.Username) == newUser){
+
+            return "Username Already Exists";
+        }
+
+        else 
       return userRepo.save(newUser);
     }
 
